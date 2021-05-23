@@ -1,2 +1,5 @@
 importFrom(Rcpp, sourceCpp)
-useDynLib(gp, .registration=TRUE)
+useDynLib(dist, .registration=TRUE)
+export(rdirichlet)
+export(rdiscrete)
+export(rgem)

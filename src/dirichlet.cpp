@@ -1,7 +1,13 @@
-#include "RcppArmadicllo.h"
+#include "RcppArmadillo.h"
 
+//' Sample from the Dirichlet distribution
+//'
+//' @param n number ofsample
+//' @param a vector of weights
+//'
+//' @export
 // [[Rcpp::export]]
-arma::mat rdirchlet(int n, arma::vec a)
+arma::mat rdirichlet(int n, arma::vec a)
 {
     int k = a.n_elem;
     arma::mat res = arma::mat(n, k, arma::fill::zeros);

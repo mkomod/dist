@@ -1,5 +1,12 @@
 #include "RcppArmadillo.h"
 
+//' Sample from the discrete distribution
+//'
+//' @param n number of samples
+//' @param p vector of class probabilities, must sum to 1
+//' @param as_indicator false: returns class number, true: returns binary vector
+//'
+//' @export
 // [[Rcpp::export]]
 arma::mat rdiscrete(int n, arma::vec p, bool as_indicator=false)
 {

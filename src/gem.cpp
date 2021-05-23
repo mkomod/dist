@@ -1,5 +1,12 @@
 #include "RcppArmadillo.h"
 
+//' Sample from the GEM distribution
+//'
+//' @param n number of samples
+//' @param k vector size 
+//' @param b shape
+//'
+//' @export
 // [[Rcpp::export]]
 arma::mat rgem(int n, int k, double b)
 {

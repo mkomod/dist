@@ -33,3 +33,36 @@ rgem <- function(n, k, b) {
     .Call(`_dist_rgem`, n, k, b)
 }
 
+#' Density function of the Laplace distribution
+#'
+#' @param x vector
+#' @param m location
+#' @param b scale
+#'
+#' @export
+dlaplace <- function(x, m, b) {
+    .Call(`_dist_dlaplace`, x, m, b)
+}
+
+#' Distribution function of the Laplace distribution
+#'
+#' @param x quantile
+#' @param m location
+#' @param b scale
+#'
+#' @export
+plaplace <- function(x, m, b) {
+    .Call(`_dist_plaplace`, x, m, b)
+}
+
+#' Sample from the Laplace distribution
+#'
+#' @param n number of samples
+#' @param m location
+#' @param b scale
+#'
+#' @export
+rlaplace <- function(n, m, b) {
+    .Call(`_dist_rlaplace`, n, m, b)
+}
+

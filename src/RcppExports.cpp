@@ -44,11 +44,53 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// dlaplace
+arma::vec dlaplace(arma::vec x, double m, double b);
+RcppExport SEXP _dist_dlaplace(SEXP xSEXP, SEXP mSEXP, SEXP bSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::vec >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type m(mSEXP);
+    Rcpp::traits::input_parameter< double >::type b(bSEXP);
+    rcpp_result_gen = Rcpp::wrap(dlaplace(x, m, b));
+    return rcpp_result_gen;
+END_RCPP
+}
+// plaplace
+arma::vec plaplace(arma::vec x, double m, double b);
+RcppExport SEXP _dist_plaplace(SEXP xSEXP, SEXP mSEXP, SEXP bSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::vec >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type m(mSEXP);
+    Rcpp::traits::input_parameter< double >::type b(bSEXP);
+    rcpp_result_gen = Rcpp::wrap(plaplace(x, m, b));
+    return rcpp_result_gen;
+END_RCPP
+}
+// rlaplace
+arma::vec rlaplace(int n, double m, double b);
+RcppExport SEXP _dist_rlaplace(SEXP nSEXP, SEXP mSEXP, SEXP bSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< double >::type m(mSEXP);
+    Rcpp::traits::input_parameter< double >::type b(bSEXP);
+    rcpp_result_gen = Rcpp::wrap(rlaplace(n, m, b));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_dist_rdirichlet", (DL_FUNC) &_dist_rdirichlet, 2},
     {"_dist_rdiscrete", (DL_FUNC) &_dist_rdiscrete, 3},
     {"_dist_rgem", (DL_FUNC) &_dist_rgem, 3},
+    {"_dist_dlaplace", (DL_FUNC) &_dist_dlaplace, 3},
+    {"_dist_plaplace", (DL_FUNC) &_dist_plaplace, 3},
+    {"_dist_rlaplace", (DL_FUNC) &_dist_rlaplace, 3},
     {NULL, NULL, 0}
 };
 
